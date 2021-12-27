@@ -1,0 +1,21 @@
+:root{
+  --cc: #3f3000;
+}
+
+
+nav a  {
+  font-size: 22px;
+   color: var(--cc);
+
+}
+
+button{
+ border: 1px solid var(--cc);
+ color: var(--cc);
+}
+
+nav{
+  border-top: 3px solid var(--cc);
+  border-bottom: 3px solid var(--cc);
+}
+

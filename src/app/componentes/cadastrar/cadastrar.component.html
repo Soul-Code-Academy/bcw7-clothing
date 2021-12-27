@@ -1,0 +1,57 @@
+<div class="container w-50 my-5 border border-3 border-warning">
+  <form action="">
+    <div class="input-group my-3">
+      <span class="input-group-text" id="addon-wrapping">Nome Completo</span>
+      <input type="text" class="form-control" name="nome" [(ngModel)]="nome">
+    </div>
+    <div class="input-group">
+      <span class="input-group-text" id="addon-wrapping">Data de Nascimento</span>
+      <input type="date" class="form-control" name="data" [(ngModel)]="data">
+    </div>
+    <div class="my-2 text-center  fs-5">
+      <p>Sua data de nascimento é:  {{data| date:'shortDate'}}</p>
+    </div>
+     <div class="bg-secondary">
+      <select class="form-select my-2" name="cor" [(ngModel)]="cor">
+        <option value="">Selecione a cor</option>
+        <option value="cor1">Amarelo</option>
+        <option value="cor2">Vermelho</option>
+        <option value="cor3">Azul</option>
+        <option value="cor4">Preto</option>
+      </select>
+
+      <div [ngSwitch]="cor">
+        <p *ngSwitchCase= "'cor1'" class=" text-warning text-center  mx-auto fw-bolder fs-5">
+          Você escolheu a Camisa Polo Lacoste Amarela
+        </p>
+        <p *ngSwitchCase="'cor2'" class= "text-center text-danger  mx-auto fw-bolder fs-5">
+          Você escolheu a Camisa Polo Lacoste Vermelha
+        </p>
+        <p *ngSwitchCase="'cor3'" class=" text-primary text-center  mx-auto fw-bolder fs-5">
+          Você escolheu a Camisa Polo Colombo Azul
+        </p>
+        <p *ngSwitchCase="'cor4'" class="text-dark text-warning text-center mx-auto fw-bolder fs-5">
+          Você escolheu a Camisa Polo Colombo Preta
+        </p>
+    </div>
+     </div>
+     <div class="bg-secondary my-3">
+      <select class="form-select " name="cidade" [(ngModel)]="cidade">
+        <option value=''> Selecione sua região :</option>
+        <option value="Buerarema">Região Nordeste - Frete: R$ 22,00</option>
+        <option value="Outra">Outras regiões - Frete: R$ 56,00 </option>
+      </select>
+    </div>
+    <div class="input-group my-3">
+      <span class="input-group-text" id="addon-wrapping">Quantidade</span>
+      <input type="number" class="form-control" name="quantidade" (blur)="valorFinal()" [(ngModel)]="quantidade">
+    </div>
+    <div class="input-group">
+      <span class="input-group-text">Valor Total</span>
+          <input type="number" class="form-control" name="valorTotal"  [(ngModel)]="valorTotal">
+    </div>
+    <div class="my-3 text-center fs-5">
+      <p>Valor da Compra:  {{valorTotal | currency: "BRL"}};</p>
+    </div>
+  </form>
+</div>

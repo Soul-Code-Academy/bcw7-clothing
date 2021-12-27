@@ -1,0 +1,19 @@
+:root{
+  --cc: #3f3000;
+}
+
+
+footer a i {
+  font-size: 40px;
+  color: var(--cc);
+}
+
+.copy{
+  color: var(--cc);
+}
+
+footer
+{
+  border-top: 3px solid var(--cc);
+  border-bottom: 3px solid var(--cc);
+}
